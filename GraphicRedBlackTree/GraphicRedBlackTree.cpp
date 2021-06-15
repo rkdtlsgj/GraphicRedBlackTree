@@ -45,7 +45,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
 	GetClientRect(hWnd, &g_rect);
-	srand((unsigned)time(NULL));
+
+	//srand((unsigned)time(NULL));
+	srand(1000);
+	
 
 	if (!hWnd)
 	{

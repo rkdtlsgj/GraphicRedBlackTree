@@ -431,7 +431,7 @@ void RedBlackTree::DeleteBalanceTree(st_NODE* pNode)
 		//왼쪽 자식이였는지 오른쪽 자식이였는지 판별해야하는데
 		//삭제됐기때문에 알 수 가 없음.
 		/*if (pParent->stp_Left == pDeleteNode || pParent->stp_Left == &Nil)*/
-		if (pParent->stp_Left == pDeleteNode->stp_Left || pParent->stp_Left == pDeleteNode)
+		if (pParent->stp_Left == pDeleteNode->stp_Left || pParent->stp_Left == pDeleteNode->stp_Right  || pParent->stp_Left == pDeleteNode)
 		{
 			if (pParent->stp_Left->Color == NODE_COLOR::RED)
 			{
@@ -475,7 +475,7 @@ void RedBlackTree::DeleteBalanceTree(st_NODE* pNode)
 				}
 			}
 		}
-		else if(pParent->stp_Right == pDeleteNode->stp_Right|| pParent->stp_Right == pDeleteNode)
+		else if(pParent->stp_Right == pDeleteNode->stp_Right || pParent->stp_Right == pDeleteNode->stp_Left || pParent->stp_Right == pDeleteNode)
 		{
 			if (pParent->stp_Right->Color == NODE_COLOR::RED)
 			{
